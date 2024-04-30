@@ -44,6 +44,8 @@ public class BootStrapData implements CommandLineRunner {
             clasp.setCompanyName("Pandora");
             clasp.setName("Clasp");
             clasp.setInv(250);
+            clasp.setMinInv(20);
+            clasp.setMaxInv(500);
             clasp.setPrice(10.0);
             clasp.setId(100L);
             outsourcedPartRepository.save(clasp);
@@ -59,6 +61,8 @@ public class BootStrapData implements CommandLineRunner {
             chain.setCompanyName("Pandora");
             chain.setName("Chain");
             chain.setInv(25);
+            chain.setMinInv(5);
+            chain.setMaxInv(100);
             chain.setPrice(300.0);
             chain.setId(200L);
             outsourcedPartRepository.save(chain);
@@ -67,6 +71,8 @@ public class BootStrapData implements CommandLineRunner {
             pendant.setCompanyName("Pandora");
             pendant.setName("Pendant");
             pendant.setInv(50);
+            pendant.setMinInv(10);
+            pendant.setMaxInv(100);
             pendant.setPrice(45.0);
             pendant.setId(300L);
             outsourcedPartRepository.save(pendant);
@@ -75,6 +81,8 @@ public class BootStrapData implements CommandLineRunner {
             gemstone.setCompanyName("Pandora");
             gemstone.setName("Gemstone");
             gemstone.setInv(50);
+            gemstone.setMinInv(10);
+            gemstone.setMaxInv(100);
             gemstone.setPrice(45.0);
             gemstone.setId(400L);
             outsourcedPartRepository.save(gemstone);
@@ -83,6 +91,8 @@ public class BootStrapData implements CommandLineRunner {
             diamond.setCompanyName("Pandora");
             diamond.setName("Diamond");
             diamond.setInv(10);
+            diamond.setMinInv(1);
+            diamond.setMaxInv(20);
             diamond.setPrice(1000.0);
             diamond.setId(500L);
             outsourcedPartRepository.save(diamond);

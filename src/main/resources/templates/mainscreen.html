@@ -17,11 +17,12 @@
 
 <div class="container">
     <h1>Jewelry Shop</h1>
-    <hr>
-    <h2>Parts</h2>
+<!--    <button class="btn btn-primary btn-sm mb-3" onclick="redirectToNewPage()"> About Page </button>-->
     <form action="/about" method="get">
         <button class="btn btn-primary btn-sm mb-3" type="submit"> About Page </button>
     </form>
+    <hr>
+    <h2>Parts</h2>
     <form th:action="@{/mainscreen}">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
         &nbsp;
@@ -38,6 +39,8 @@
             <th>Name</th>
             <th>Price</th>
             <th>Inventory</th>
+            <th>Minimum Inventory</th>
+            <th>Maximum Inventory</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -46,6 +49,8 @@
             <td th:text="${tempPart.name}">1</td>
             <td th:text="${tempPart.price}">1</td>
             <td th:text="${tempPart.inv}">1</td>
+            <td th:text="${tempPart.minInv}">1</td>
+            <td th:text="${tempPart.maxInv}">1</td>
             <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
@@ -85,6 +90,7 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <!--                <a class="btn btn-primary btn-sm mb-3">Buy</a>-->
                 <a th:href="@{/buyproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Buy</a>
             </td>
         </tr>
@@ -92,4 +98,5 @@
     </table>
 </div>
 </body>
+
 </html>
